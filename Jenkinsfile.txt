@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				sh 'npm config rm proxy'
-				sh 'npm config rm https-proxy'
+				sh 'npm config delete proxy'
                 sh 'npm install' 
             }
         }
