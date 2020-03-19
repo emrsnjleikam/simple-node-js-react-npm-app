@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-			    sh 'echo '151.101.16.162 registry.npmjs.org' >> /etc/hosts'
+			    sh 'echo 151.101.16.162 registry.npmjs.org >> /etc/hosts'
                 sh 'npm install' 
             }
         }
