@@ -2,13 +2,12 @@ pipeline {
     agent {
         docker {
             image 'node:6-alpine' 
-            args '-p 3000:3000' 
+            args '-p 3000:3000 --add-host 151.101.16.162 registry.npmjs.org' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-			    sh 'echo 151.101.16.162 registry.npmjs.org >> /etc/hosts'
                 sh 'npm install' 
             }
         }
